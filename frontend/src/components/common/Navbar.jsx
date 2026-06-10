@@ -22,9 +22,9 @@ const Navbar = () => {
           Home
         </Link>
 
-        <Link to="#">Plans</Link>
+        <Link to="/plans">Plans</Link>
 
-        <Link to="#">Amenities</Link>
+        <Link to="/amenities">Amenities</Link>
 
         <Link to="#">Blogs</Link>
       </div>

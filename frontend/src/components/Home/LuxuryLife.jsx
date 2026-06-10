@@ -1,0 +1,36 @@
+import React from "react";
+
+const LuxuryLife = () => {
+  return (
+    <section className="flex min-h-[80vh] items-center justify-center bg-[#f5f5f5] px-6">
+      <div className="w-full max-w-6xl">
+        {/* Main Row */}
+        <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-6">
+          
+          <h2 className="text-center text-5xl font-normal tracking-[-0.04em] text-[#111] md:text-7xl">
+            Live Life,
+          </h2>
+
+          <div className="overflow-hidden rounded-3xl">
+            <img
+              src="/home/luxury/img.jpg"
+              alt="Luxury Living"
+              className="h-40 w-40 object-cover md:h-56 md:w-56"
+            />
+          </div>
+
+          <h2 className="text-center text-5xl font-normal tracking-[-0.04em] text-[#111] md:text-7xl">
+            Lavishly
+          </h2>
+        </div>
+
+        {/* Subtitle */}
+        <p className="mt-10 text-center text-xl font-normal text-[#222] md:text-4xl">
+          Luxury living redefined with global inspiration.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+export default LuxuryLife;

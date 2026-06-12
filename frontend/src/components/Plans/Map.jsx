@@ -11,25 +11,25 @@ const Map = () => {
         {/* Header */}
         <div className="mb-14 flex flex-col justify-between gap-8 lg:flex-row lg:items-start">
           <div>
-            <h2 className="text-5xl font-semibold leading-none tracking-[-0.05em] text-[#111] md:text-7xl">
+            <h2 data-split className="text-5xl font-semibold leading-none tracking-[-0.05em] text-[#111] md:text-7xl">
               Europa Floor Plan
             </h2>
 
-            <p className="mt-5 text-lg font-light text-[#222] md:text-2xl">
+            <p data-reveal className="mt-5 text-lg font-light text-[#222] md:text-2xl">
               A few specifications that bring perfection to the upgrade
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-8">
+          <div data-stagger-container className="flex flex-wrap gap-8">
             {floors.map((floor) => (
-              <div key={floor}>
+              <div data-stagger-item key={floor}>
                 <p className="mb-3 text-2xl font-light text-[#111]">
                   {floor}
                 </p>
 
                 <button
                   onClick={() => setActiveFloor(floor)}
-                  className={`rounded-xl border px-7 py-3 text-lg transition ${
+                  className={`rounded-xl border px-7 py-3 text-lg transition duration-500 hover:-translate-y-0.5 ${
                     activeFloor === floor
                       ? "border-[#C6A12D] bg-[#C6A12D] text-white"
                       : "border-[#C6A12D] bg-transparent text-[#5b4c2b]"
@@ -46,8 +46,9 @@ const Map = () => {
         </div>
 
         {/* Map Image */}
-        <div className="overflow-hidden">
+        <div data-image-reveal className="overflow-hidden">
           <img
+            data-parallax-img
             src="/plans/map/map.png"
             alt="Europa Floor Plan"
             className="w-full h-[80vh] object-contain"

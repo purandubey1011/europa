@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 const UnitPlans = () => {
-  const [activeBlock, setActiveBlock] = useState("7th Floor (2Bhk)");
-
   return (
     <section className="bg-[#f3f3f3] py-16">
       <div className="mx-auto max-w-7xl px-6">

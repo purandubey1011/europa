@@ -5,6 +5,7 @@ const Thought = () => {
     <section className="relative h-screen overflow-hidden">
       {/* Background */}
       <img
+        data-parallax-img
         src="/home/thought/img.jpg"
         alt="Luxury Living"
         className="absolute inset-0 h-full w-full object-cover"
@@ -19,6 +20,7 @@ const Thought = () => {
       {/* Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-6">
         <div
+          data-reveal
           className="
             rounded-[2rem]
             border border-white/15
@@ -30,7 +32,7 @@ const Thought = () => {
             shadow-[0_8px_40px_rgba(0,0,0,0.35)]
           "
         >
-          <h2 className="text-4xl font-light tracking-[-0.03em] text-white md:text-6xl">
+          <h2 data-split className="text-4xl font-light tracking-[-0.03em] text-white md:text-6xl">
             Live Life, Lavishly
           </h2>
 

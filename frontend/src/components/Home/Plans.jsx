@@ -8,13 +8,13 @@ const Plans = () => {
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="mb-14 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <h2 className="text-5xl font-semibold tracking-[-0.04em] text-[#111] md:text-6xl">
+          <h2 data-split className="text-5xl font-semibold tracking-[-0.04em] text-[#111] md:text-6xl">
             Plans
           </h2>
 
-          <div className="flex gap-10">
+          <div data-stagger-container className="flex gap-10">
             {/* 4 BHK */}
-            <div>
+            <div data-stagger-item>
               <h3 className="mb-4 text-3xl font-light text-[#111]">
                 4
                 <span className="ml-1 text-xl uppercase">BHK</span>
@@ -22,7 +22,7 @@ const Plans = () => {
 
               <button
                 onClick={() => setActivePlan("4bhk")}
-                className={`rounded-xl border px-8 py-4 text-xl transition ${
+                className={`rounded-xl border px-8 py-4 text-xl transition duration-500 hover:-translate-y-0.5 ${
                   activePlan === "4bhk"
                     ? "border-[#C6A12D] bg-[#C6A12D] text-white"
                     : "border-[#C6A12D] bg-transparent text-[#8c7a3d]"
@@ -34,7 +34,7 @@ const Plans = () => {
             </div>
 
             {/* 5 BHK */}
-            <div>
+            <div data-stagger-item>
               <h3 className="mb-4 text-3xl font-light text-[#111]">
                 5
                 <span className="ml-1 text-xl uppercase">BHK</span>
@@ -42,7 +42,7 @@ const Plans = () => {
 
               <button
                 onClick={() => setActivePlan("5bhk")}
-                className={`rounded-xl border px-8 py-4 text-xl transition ${
+                className={`rounded-xl border px-8 py-4 text-xl transition duration-500 hover:-translate-y-0.5 ${
                   activePlan === "5bhk"
                     ? "border-[#C6A12D] bg-[#C6A12D] text-white"
                     : "border-[#C6A12D] bg-transparent text-[#8c7a3d]"
@@ -56,8 +56,9 @@ const Plans = () => {
         </div>
 
         {/* Plan Image */}
-        <div className="flex justify-center">
+        <div data-image-reveal className="flex justify-center">
           <img
+            data-parallax-img
             src={
               activePlan === "4bhk"
                 ? "/home/plans/map2.png"

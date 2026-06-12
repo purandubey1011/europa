@@ -1,2 +1,94 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+.cinematic-word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.cinematic-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+[data-image-reveal] {
+  will-change: clip-path;
+}
+
+[data-parallax-img],
+[data-hero-bg] {
+  will-change: transform;
+}
+
+button,
+a {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cursor-follower {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  opacity: 0;
+  height: 14px;
+  width: 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(242, 238, 228, 0.76);
+  background: #f2eee438;
+  box-shadow:
+    0 0 0 4px #12131114,
+    0 2px 12px #1213112e;
+  mix-blend-mode: difference;
+  transition:
+    width 0.28s ease,
+    height 0.28s ease,
+    opacity 0.24s ease,
+    background 0.28s ease;
+  will-change: transform;
+}
+
+.cursor-follower.is-visible {
+  opacity: 1;
+}
+
+.cursor-follower.is-interactive {
+  height: 25px;
+  width: 25px;
+  background: #f2eee41a;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-follower {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .cinematic-word {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .cursor-follower {
+    display: none;
+  }
+}

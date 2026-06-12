@@ -25,7 +25,7 @@ const Footer = () => {
         {/* Top */}
         <div className="grid gap-12 lg:grid-cols-[1fr_34rem]">
           <div>
-            <h2 className="max-w-xl text-5xl font-semibold leading-[1.05] tracking-[-0.05em] md:text-6xl">
+            <h2 data-split className="max-w-xl text-5xl font-semibold leading-[1.05] tracking-[-0.05em] md:text-6xl">
               Can't wait to
               <br />
               know more? Let's
@@ -33,22 +33,22 @@ const Footer = () => {
               talk!
             </h2>
 
-            <p className="mt-7 text-base text-white/80">
+            <p data-reveal className="mt-7 text-base text-white/80">
               Reach out to us for inquiries, sale or buy
             </p>
 
-            <div className="mt-7 space-y-5">
-              <div>
+            <div data-stagger-container className="mt-7 space-y-5">
+              <div data-stagger-item>
                 <p className="text-sm text-white/60">Phone</p>
                 <p className="text-2xl font-light">+91 25 25896 365</p>
               </div>
 
-              <div>
+              <div data-stagger-item>
                 <p className="text-sm text-white/60">Enquiries</p>
                 <p className="text-2xl font-light">info@gpgreens.com</p>
               </div>
 
-              <div>
+              <div data-stagger-item>
                 <p className="text-sm text-white/60">Address</p>
                 <p className="text-2xl font-light leading-tight">
                   CP Greens - IGBC
@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
 
           {/* Form */}
-          <form className="rounded-2xl border border-white/20 bg-white/15 p-6 backdrop-blur-xl shadow-2xl">
+          <form data-reveal className="rounded-2xl border border-white/20 bg-white/15 p-6 backdrop-blur-xl shadow-2xl">
             <div className="space-y-4">
               <label className="block">
                 <span className="mb-2 block text-xs text-white">Full Name</span>
@@ -107,7 +107,7 @@ const Footer = () => {
                 />
               </label>
 
-              <button className="flex h-11 w-full items-center justify-between rounded-lg bg-[#C6A12D] px-4 text-xs uppercase tracking-wide text-white">
+              <button className="flex h-11 w-full items-center justify-between rounded-lg bg-[#C6A12D] px-4 text-xs uppercase tracking-wide text-white transition duration-500 hover:-translate-y-0.5">
                 Contact Us
                 <span className="flex h-6 w-6 items-center justify-center rounded-md bg-white text-[#C6A12D]">
                   <ArrowRight size={14} />
@@ -119,7 +119,7 @@ const Footer = () => {
 
        {/* Big Text */}
 <div className="pointer-events-none relative -mt-6 text-center">
-  <h2 className="footer-glass text-[17vw] font-semibold leading-none tracking-[-0.08em]">
+  <h2 data-reveal className="footer-glass text-[17vw] font-semibold leading-none tracking-[-0.08em]">
     EUROPA
   </h2>
 

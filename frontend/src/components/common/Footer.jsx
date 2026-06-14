@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import {
   FaFacebookF,
   FaInstagram,
@@ -23,9 +24,9 @@ const Footer = () => {
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-10 md:px-12">
         {/* Top */}
-        <div className="grid gap-12 lg:grid-cols-[1fr_34rem]">
+        <div className="grid gap-10 lg:grid-cols-[1fr_34rem] lg:gap-12">
           <div>
-            <h2 data-split className="max-w-xl text-5xl font-semibold leading-[1.05] tracking-[-0.05em] md:text-6xl">
+            <h2 data-split className="max-w-xl text-4xl font-semibold leading-[1.05] tracking-[-0.05em] sm:text-5xl md:text-6xl">
               Can't wait to
               <br />
               know more? Let's
@@ -40,17 +41,17 @@ const Footer = () => {
             <div data-stagger-container className="mt-7 space-y-5">
               <div data-stagger-item>
                 <p className="text-sm text-white/60">Phone</p>
-                <p className="text-2xl font-light">+91 25 25896 365</p>
+                <p className="text-xl font-light sm:text-2xl">+91 25 25896 365</p>
               </div>
 
               <div data-stagger-item>
                 <p className="text-sm text-white/60">Enquiries</p>
-                <p className="text-2xl font-light">info@gpgreens.com</p>
+                <p className="text-xl font-light sm:text-2xl">info@gpgreens.com</p>
               </div>
 
               <div data-stagger-item>
                 <p className="text-sm text-white/60">Address</p>
-                <p className="text-2xl font-light leading-tight">
+                <p className="text-xl font-light leading-tight sm:text-2xl">
                   CP Greens - IGBC
                   <br />
                   Certified Apartments
@@ -60,7 +61,7 @@ const Footer = () => {
           </div>
 
           {/* Form */}
-          <form data-reveal className="rounded-2xl border border-white/20 bg-white/15 p-6 backdrop-blur-xl shadow-2xl">
+          <form data-reveal className="rounded-2xl border border-white/20 bg-white/15 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
             <div className="space-y-4">
               <label className="block">
                 <span className="mb-2 block text-xs text-white">Full Name</span>
@@ -119,7 +120,7 @@ const Footer = () => {
 
        {/* Big Text */}
 <div className="pointer-events-none relative -mt-6 text-center">
-  <h2 data-reveal className="footer-glass text-[17vw] font-semibold leading-none tracking-[-0.08em]">
+  <h2 data-reveal className="footer-glass text-[16vw] font-semibold leading-none tracking-[-0.08em] sm:text-[17vw]">
     EUROPA
   </h2>
 
@@ -128,7 +129,7 @@ const Footer = () => {
 </div>
 
         {/* Bottom */}
-        <div className="relative z-20 -mt-4 grid gap-10 lg:grid-cols-[1fr_auto_auto]">
+        <div className="relative z-20 -mt-2 grid gap-10 sm:-mt-4 lg:grid-cols-[1fr_auto_auto]">
           <div>
             <img
               src="/home/footer/logo.png"
@@ -156,10 +157,16 @@ const Footer = () => {
 
           <div>
             <h4 className="mb-4 text-base">Quick Links</h4>
-            <div className="space-y-3 text-xs text-white/70">
-              <p>Home</p>
-              <p>Plans</p>
-              <p>Amenities</p>
+            <div className="flex flex-col items-start gap-3 text-xs text-white/70">
+              {[
+                ["Home", "/"],
+                ["Plans", "/plans"],
+                ["Amenities", "/amenities"],
+              ].map(([label, to]) => (
+                <NavLink key={to} to={to} className="transition hover:text-white">
+                  {label}
+                </NavLink>
+              ))}
             </div>
           </div>
 

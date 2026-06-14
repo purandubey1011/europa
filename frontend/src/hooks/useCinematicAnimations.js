@@ -183,8 +183,9 @@ export const useCinematicAnimations = (rootRef, dependency) => {
       });
 
       root.querySelectorAll("[data-parallax-img]").forEach((image) => {
+        gsap.set(image, { scale: 1.035, yPercent: -1.5, transformOrigin: "center center" });
         gsap.to(image, {
-          yPercent: 3,
+          yPercent: 1.5,
           ease: "none",
           scrollTrigger: {
             trigger: image.closest("[data-image-reveal]") || image,

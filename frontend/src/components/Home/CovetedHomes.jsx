@@ -6,9 +6,9 @@ const CovetedHomes = () => {
     <section className="bg-[#f5f5f5] py-14">
       <div className="mx-auto max-w-[96rem]">
         {/* Top Content */}
-        <div className="mb-12 flex flex-col justify-between gap-8 px-8 md:flex-row md:px-14">
+        <div className="mb-12 flex flex-col justify-between gap-8 px-5 sm:px-8 md:flex-row md:px-14">
           {/* Left */}
-          <h2 data-split className="max-w-2xl text-4xl font-semibold leading-[0.95] tracking-[-0.05em] text-[#111] md:text-7xl">
+          <h2 data-split className="max-w-2xl text-4xl font-semibold leading-[0.98] tracking-[-0.05em] text-[#111] md:text-7xl">
             Siliguri's Most
             <br />
             Coveted Homes
@@ -38,7 +38,7 @@ const CovetedHomes = () => {
             data-parallax-img
             src="/home/convetedHome/bg.jpg"
             alt="Europa Siliguri"
-            className="h-[80vh] w-full object-cover transition duration-700"
+            className="h-[58vh] min-h-[22rem] w-full object-cover transition duration-700 md:h-[80vh]"
           />
 
           <div className="absolute inset-0 bg-black/30" />

@@ -5,6 +5,8 @@ import Home from './components/Home/Home';
 import Plans from './components/Plans/Plans.jsx';
 import Amenities from './components/Amenities/Amenities.jsx';
 import { useCinematicAnimations } from './hooks/useCinematicAnimations.js';
+import { useLenisScroll } from './hooks/useLenisScroll.js';
+import { useRouteScrollTop } from './hooks/useRouteScrollTop.js';
 import CursorFollower from './components/common/CursorFollower.jsx';
 
 const App = () => {
@@ -12,6 +14,8 @@ const App = () => {
   const { pathname } = useLocation();
 
   useCinematicAnimations(pageRef, pathname);
+  useLenisScroll();
+  useRouteScrollTop(pathname);
 
   return (
     <div ref={pageRef} data-cinematic-page>

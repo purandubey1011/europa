@@ -5,14 +5,14 @@ const Plans = () => {
 
   return (
     <section className="bg-[#f5f5f5] py-16">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         {/* Header */}
         <div className="mb-14 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <h2 data-split className="text-5xl font-semibold tracking-[-0.04em] text-[#111] md:text-6xl">
+          <h2 data-split className="text-4xl font-semibold tracking-[-0.04em] text-[#111] sm:text-5xl md:text-6xl">
             Plans
           </h2>
 
-          <div data-stagger-container className="flex gap-10">
+          <div data-stagger-container className="flex flex-wrap gap-6 sm:gap-10">
             {/* 4 BHK */}
             <div data-stagger-item>
               <h3 className="mb-4 text-3xl font-light text-[#111]">
@@ -22,7 +22,7 @@ const Plans = () => {
 
               <button
                 onClick={() => setActivePlan("4bhk")}
-                className={`rounded-xl border px-8 py-4 text-xl transition duration-500 hover:-translate-y-0.5 ${
+                className={`rounded-xl border px-6 py-3 text-lg transition duration-500 hover:-translate-y-0.5 sm:px-8 sm:py-4 sm:text-xl ${
                   activePlan === "4bhk"
                     ? "border-[#C6A12D] bg-[#C6A12D] text-white"
                     : "border-[#C6A12D] bg-transparent text-[#8c7a3d]"
@@ -42,7 +42,7 @@ const Plans = () => {
 
               <button
                 onClick={() => setActivePlan("5bhk")}
-                className={`rounded-xl border px-8 py-4 text-xl transition duration-500 hover:-translate-y-0.5 ${
+                className={`rounded-xl border px-6 py-3 text-lg transition duration-500 hover:-translate-y-0.5 sm:px-8 sm:py-4 sm:text-xl ${
                   activePlan === "5bhk"
                     ? "border-[#C6A12D] bg-[#C6A12D] text-white"
                     : "border-[#C6A12D] bg-transparent text-[#8c7a3d]"

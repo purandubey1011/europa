@@ -12,8 +12,8 @@ const LuxuryAmenities = () => {
   return (
     <section className="overflow-hidden bg-[#f5f5f5] py-16">
       <div className="mx-auto max-w-[96rem]">
-        <div className="mb-14 flex flex-col justify-between gap-8 px-8 md:flex-row md:items-start md:px-14">
-          <h2 data-split className="text-5xl font-semibold leading-[1.05] tracking-[-0.05em] text-[#111] md:text-7xl">
+        <div className="mb-14 flex flex-col justify-between gap-8 px-5 sm:px-8 md:flex-row md:items-start md:px-14">
+          <h2 data-split className="text-4xl font-semibold leading-[1.05] tracking-[-0.05em] text-[#111] sm:text-5xl md:text-7xl">
             Live Life,
             <br />
             Luxuriously
@@ -33,13 +33,13 @@ const LuxuryAmenities = () => {
           </div>
         </div>
 
-        <div data-stagger-container className="flex gap-6 overflow-hidden">
+        <div data-stagger-container className="flex gap-4 overflow-x-auto px-5 pb-2 sm:gap-6 sm:px-8 md:px-0">
           {images.map((image, index) => (
             <div
               data-stagger-item
               data-image-reveal
               key={index}
-              className="h-[38vh] min-w-[22rem] overflow-hidden rounded-2xl md:min-w-[32rem]"
+              className="h-[34vh] min-w-[78vw] overflow-hidden rounded-2xl sm:min-w-[22rem] md:h-[38vh] md:min-w-[32rem]"
             >
               <img
                 data-parallax-img

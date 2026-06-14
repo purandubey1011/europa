@@ -3,11 +3,11 @@ import { ArrowRight, Play, Club, BedDouble } from "lucide-react";
 
 const Livelife = () => {
   return (
-    <section className="bg-[#f3f3f3] py-14">
+    <section className="bg-[#f3f3f3] pt-12 sm:pt-14">
       <div className="mx-auto max-w-[96rem] px-0">
         {/* Top Content */}
-        <div className="mb-16 grid items-start gap-10 px-8 md:px-14 lg:grid-cols-[1.15fr_1fr]">
-          <h2 data-split className="text-5xl font-semibold leading-[1.05] tracking-[-0.04em] text-[#111] md:text-7xl">
+        <div className="mb-12 grid items-start gap-10 px-5 sm:px-8 md:mb-16 md:px-14 lg:grid-cols-[1.15fr_1fr]">
+          <h2 data-split className="text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-[#111] sm:text-5xl md:text-7xl">
             Live Life,
             <br />
             Leisurely
@@ -16,7 +16,7 @@ const Livelife = () => {
           <div data-stagger-container className="grid gap-x-14 gap-y-6 sm:grid-cols-2">
             <div data-stagger-item className="flex items-start gap-4">
               <Club className="mt-1 h-10 w-10 shrink-0 text-black" />
-              <p className="text-xl font-light leading-snug text-[#111] md:text-2xl">
+              <p className="text-lg font-light leading-snug text-[#111] md:text-2xl">
                 Dedicated
                 <br />
                 Club
@@ -25,14 +25,14 @@ const Livelife = () => {
 
             <div data-stagger-item className="flex items-start gap-4">
               <BedDouble className="mt-1 h-10 w-10 shrink-0 text-black" />
-              <p className="text-xl font-light leading-snug text-[#111] md:text-2xl">
+              <p className="text-lg font-light leading-snug text-[#111] md:text-2xl">
                 5 Bed Luxury
                 <br />
                 Residences
               </p>
             </div>
 
-            <button data-stagger-item className="flex w-fit items-center gap-3 rounded-xl bg-[#C6A12D] px-5 py-3 text-xs font-medium uppercase text-white transition duration-500 hover:-translate-y-0.5 sm:col-span-2 sm:ml-[21.5vw]">
+            <button className="mt-2 flex w-full max-w-[17rem] items-center justify-between gap-3 rounded-xl bg-[#C6A12D] px-5 py-3 text-xs font-medium uppercase text-white shadow-[0_14px_30px_rgba(198,161,45,0.18)] transition duration-500 hover:-translate-y-0.5 sm:col-span-2 sm:w-fit sm:justify-start lg:ml-[21.5vw]">
               Download Brochure
               <span className="flex h-7 w-7 items-center justify-center rounded-md bg-white text-[#C6A12D]">
                 <ArrowRight size={14} />
@@ -47,7 +47,7 @@ const Livelife = () => {
             data-parallax-img
             src="/home/livelife/img.jpg"
             alt="Europa Siliguri"
-            className="h-[80vh] min-h-[28rem] w-full object-cover transition duration-700"
+            className="h-[58vh] min-h-[22rem] w-full object-cover transition duration-700 md:h-[80vh] md:min-h-[28rem]"
           />
 
           <div className="absolute inset-0 bg-black/45" />

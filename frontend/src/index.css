@@ -21,6 +21,11 @@ body {
   overflow-x: hidden;
 }
 
+html.site-loading,
+body.site-loading {
+  overflow: hidden;
+}
+
 html,
 body,
 * {

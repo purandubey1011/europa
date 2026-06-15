@@ -7,6 +7,7 @@ import Amenities from './components/Amenities/Amenities.jsx';
 import { useCinematicAnimations } from './hooks/useCinematicAnimations.js';
 import { useLenisScroll } from './hooks/useLenisScroll.js';
 import { useRouteScrollTop } from './hooks/useRouteScrollTop.js';
+import AppLoader from './components/common/AppLoader.jsx';
 import CursorFollower from './components/common/CursorFollower.jsx';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <div ref={pageRef} data-cinematic-page>
+      <AppLoader />
       <CursorFollower />
       <Routes>
         <Route path="/" element={<Home />} />

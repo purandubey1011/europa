@@ -58,7 +58,25 @@ export const useCinematicAnimations = (rootRef, dependency) => {
       return undefined;
     }
 
-    const ctx = gsap.context(() => {
+    let ctx;
+    let loaderObserver;
+    let fallbackTimer;
+    let heroLoadTimeline;
+
+    const isLoaderActive = () =>
+      document.documentElement.classList.contains("site-loading") ||
+      document.body.classList.contains("site-loading") ||
+      Boolean(document.querySelector('[aria-label="Loading Europa"]'));
+
+    const playHeroTimeline = () => {
+      heroLoadTimeline?.play(0);
+      ScrollTrigger.refresh();
+    };
+
+    const runAnimations = () => {
+      if (ctx) return;
+
+      ctx = gsap.context(() => {
       root.querySelectorAll("[data-split]").forEach(splitText);
 
       const hero = root.querySelector("[data-hero]");
@@ -68,26 +86,30 @@ export const useCinematicAnimations = (rootRef, dependency) => {
         const heroItems = hero.querySelectorAll("[data-hero-reveal]");
 
         gsap.set(heroBg, { scale: 1.025, yPercent: -1.5, transformOrigin: "center center" });
-        gsap.set(heroWords, { opacity: 0, y: 38 });
-        gsap.set(heroItems, { opacity: 0, y: 24 });
+        gsap.set(heroWords, { opacity: 0, y: 30 });
+        gsap.set(heroItems, { opacity: 0, y: 18 });
 
-        const loadTimeline = gsap.timeline({ defaults: { ease: "power4.out" } });
+        const loadTimeline = gsap.timeline({
+          paused: isLoaderActive(),
+          defaults: { ease: "power3.out" },
+        });
+        heroLoadTimeline = loadTimeline;
         loadTimeline
           .to(heroWords, {
             opacity: 1,
             y: 0,
-            duration: 0.95,
-            stagger: 0.038,
+            duration: 0.68,
+            stagger: 0.026,
           })
           .to(
             heroItems,
             {
               opacity: 1,
               y: 0,
-              duration: 0.8,
-              stagger: 0.08,
+              duration: 0.56,
+              stagger: 0.055,
             },
-            "-=0.55",
+            "-=0.42",
           );
 
         if (heroBg) {
@@ -195,10 +217,40 @@ export const useCinematicAnimations = (rootRef, dependency) => {
           },
         });
       });
-    }, root);
+      }, root);
+
+      ScrollTrigger.refresh();
+    };
+
+    runAnimations();
+
+    if (isLoaderActive()) {
+      loaderObserver = new MutationObserver(() => {
+        if (!isLoaderActive()) {
+          loaderObserver.disconnect();
+          window.clearTimeout(fallbackTimer);
+          playHeroTimeline();
+        }
+      });
+
+      loaderObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+      loaderObserver.observe(document.body, {
+        attributes: true,
+        childList: true,
+        subtree: true,
+        attributeFilter: ["class"],
+      });
+
+      fallbackTimer = window.setTimeout(playHeroTimeline, 5000);
+    }
 
     return () => {
-      ctx.revert();
+      loaderObserver?.disconnect();
+      window.clearTimeout(fallbackTimer);
+      ctx?.revert();
     };
   }, [rootRef, dependency]);
 };
